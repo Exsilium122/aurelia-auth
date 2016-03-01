@@ -136,11 +136,11 @@ System.register(['aurelia-framework', './baseConfig', './storage', './authUtils'
                             return false;
                         }
                         if (authUtils.isArray(auth) && auth.length > 0) {
-                            if (!payload.roles) {
+                            if (!payload.sub.roles) {
                                 return false;
                             }
                             return auth.some(function (r) {
-                                return payload.roles.some(function (rp) {
+                                return payload.sub.roles.some(function (rp) {
                                     return r === rp;
                                 });
                             });

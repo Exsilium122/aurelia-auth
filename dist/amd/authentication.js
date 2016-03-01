@@ -131,11 +131,11 @@ define(['exports', 'aurelia-framework', './baseConfig', './storage', './authUtil
                     return false;
                 }
                 if (_authUtils2['default'].isArray(auth) && auth.length > 0) {
-                    if (!payload.roles) {
+                    if (!payload.sub.roles) {
                         return false;
                     }
                     return auth.some(function (r) {
-                        return payload.roles.some(function (rp) {
+                        return payload.sub.roles.some(function (rp) {
                             return r === rp;
                         });
                     });
